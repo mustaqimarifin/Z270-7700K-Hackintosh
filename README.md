@@ -8,7 +8,7 @@
 
 <div align="center">
 
-<img src="./public/invisibleman.avifs" width=50 height=50/>
+<img src="./img/invisibleman.avifs" width=50 height=50/>
 <img src="https://i.gifer.com/T3IX.gif" width=50 height=50/>
 
 <h3>WELCOME BLUD</h3>
@@ -21,50 +21,50 @@
 
 ## Hardware
 
-* Asus Strix Z270i
-* Intel i7-7700K
-* Intel HD 630
-* \~AMD Radeon RX 580~
-* Asus GTX 750Ti
-* Audio Realtek ALC1220
-* Ethernet Intel I219V7
-* Wi-Fi + BT Wireless 8265 ( Taken from a broken laptop. This board comes with Atheros in most markets I believe.)
-* Android Tethering using HoRNDIS
-* 2 x Samsung 970 EVO (Dont recommend Samsung drives anymore)
+- Asus Strix Z270i
+- Intel i7-7700K
+- Intel HD 630
+- \~AMD Radeon RX 580~
+- Asus GTX 750Ti
+- Audio Realtek ALC1220
+- Ethernet Intel I219V7
+- Wi-Fi + BT Wireless 8265 ( Taken from a broken laptop. This board comes with Atheros in most markets I believe.)
+- Android Tethering using HoRNDIS
+- 2 x Samsung 970 EVO (Dont recommend Samsung drives anymore)
 
 ## BIOS
 
-* CSM: Disabled (mandatory)
-* VT-d: Enabled
-* Platform Power Management: Disabled
-* XHCI Hand-Off: Enabled
-* Network Stack: Disabled
-* Wake on LAN: Disabled
-* Initial Display Output: CPU Graphics
-* Integrated Graphics: Enabled
-* DVMT Pre-allocated: 1024MB
-* Above 4G Decoding: Enabled
-* CFG Lock: Disabled (mandatory)
-* Fast Boot: Disabled
-* OS Type: Windows 11
-* Secure Boot: Disabled. Not worth enabling AT ALL if you're dual-booting Win 11. Microsoft always wants to take over the whole PC.
+- CSM: Disabled (mandatory)
+- VT-d: Enabled
+- Platform Power Management: Disabled
+- XHCI Hand-Off: Enabled
+- Network Stack: Disabled
+- Wake on LAN: Disabled
+- Initial Display Output: CPU Graphics
+- Integrated Graphics: Enabled
+- DVMT Pre-allocated: 1024MB
+- Above 4G Decoding: Enabled
+- CFG Lock: Disabled (mandatory)
+- Fast Boot: Disabled
+- OS Type: Windows 11
+- Secure Boot: Disabled. Not worth enabling AT ALL if you're dual-booting Win 11. Microsoft always wants to take over the whole PC.
 
 ## What works well?
 
-* RX580 worked well for years and died. Currently have my old 750Ti for Windows. Disabled in
+- RX580 worked well for years and died. Currently have my old 750Ti for Windows. Disabled in
   macOS with an SSDT and working framebuffer settings for iGPU with 2 displays
-* Shutdown and restart
-* Ethernet
-* Sound ( Realtek and HDMI )
-* USB ports (USB port map for this board)
-* Wifi
+- Shutdown and restart
+- Ethernet
+- Sound ( Realtek and HDMI )
+- USB ports (USB port map for this board)
+- Wifi
 
 ## What's not working?
 
-* Sleep: It's fake sleep because iGPU hacks are broken. It will just shut down and be greeted by an annoying system report upon reboot.
+- Sleep: It's fake sleep because iGPU hacks are broken. It will just shut down and be greeted by an annoying system report upon reboot.
   Functional sleep requires an AMD GPU to be functional.
 
-***
+---
 
 ## ACPI
 
@@ -80,25 +80,25 @@ USB Power settings and Fake EC (Laptop) because z270i has multiple EC's
 
 Disable GTX 750Ti for macOS
 
-***
+---
 
 ### Kexts
 
 ## Source the Kexts yourselves. Refer to config. Only USBModern and HoRNDIS provided in Kext folder
 
-* Lilu 1.7.0
-* NVMEFix 1.1.2
-* Airportitlwm 2.3.0
-* HibernationFixup 1.5.2
-* BluetoolFixup 2.6.9
-* IntelBluetoothFirmware 2.4.0
-* IntelBTPatcher 2.4.0
-* IntelMausi 1.0.8
-* AppleALC 1.9.3
-* AirportItlwm 2.3.0 - Sonoma14.4 Version!!
-* WhateverGreen 1.3.7
-* VirtualSMC 1.3.4 inc SMCProcessor + SMCSuperIO
-* HoRNDIS 9.2 - Kext extracted from Official [HoRNDIS](https://github.com/jwise/HoRNDIS) Pkg
+- Lilu 1.7.0
+- NVMEFix 1.1.2
+- Airportitlwm 2.3.0
+- HibernationFixup 1.5.2
+- BluetoolFixup 2.6.9
+- IntelBluetoothFirmware 2.4.0
+- IntelBTPatcher 2.4.0
+- IntelMausi 1.0.8
+- AppleALC 1.9.3
+- AirportItlwm 2.3.0 - Sonoma14.4 Version!!
+- WhateverGreen 1.3.7
+- VirtualSMC 1.3.4 inc SMCProcessor + SMCSuperIO
+- HoRNDIS 9.2 - Kext extracted from Official [HoRNDIS](https://github.com/jwise/HoRNDIS) Pkg
 
 ## USBModern.Kext
 
@@ -111,7 +111,7 @@ While you can map from macOS, its annoying as hell. If you're needing to map fro
 
 It must be noted I was unable to use the kext produced by USBToolbox but the mapping was indeed correct. So I copied over the mapping on to a previous kext made with the OG [USBMap](https://github.com/corpnewt/USBMap) which you can refer to in the provided EFI
 
-***
+---
 
 ### config.plist
 
