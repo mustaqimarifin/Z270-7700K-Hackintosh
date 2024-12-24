@@ -13,6 +13,8 @@
 
 <h3>WELCOME BLUD</h3>
 
+</div>
+
 # macOS 14.7.2 Sonoma on Z270 using OpenCore 1.0.3
 
 <p align="center">
@@ -24,13 +26,13 @@
 - Asus Strix Z270i
 - Intel i7-7700K
 - Intel HD 630
-- \~AMD Radeon RX 580~
-- Asus GTX 750Ti
+- ~AMD Radeon RX 580~
+- Asus GTX 750Ti (Disabled with SSDT)
 - Audio Realtek ALC1220
 - Ethernet Intel I219V7
 - Wi-Fi + BT Wireless 8265 ( Taken from a broken laptop. This board comes with Atheros in most markets I believe.)
 - Android Tethering using HoRNDIS
-- 2 x Samsung 970 EVO (Dont recommend Samsung drives anymore)
+- 2 x Samsung 970 EVO (Dont recommend Samsung drives anymore. Lots of reliability issues and scares. BUYER BEWARE!!!)
 
 ## BIOS
 
