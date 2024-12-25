@@ -26,7 +26,7 @@
 * Asus Strix Z270i
 * Intel i7-7700K
 * Intel HD 630
-* \~~AMD Radeon RX 580~~
+* ~~AMD Radeon RX 580~~
 * Asus GTX 750Ti (Disabled with SSDT)
 * Audio Realtek ALC1220
 * Ethernet Intel I219V7
@@ -102,10 +102,15 @@ Disable GTX 750Ti for macOS
 
 ![USBMap](img/usbmap.webp)
 
-While you can map from macOS, its annoying as hell. If you're needing to map from scratch best to do it in windows with
+While you can map from macOS, its annoying as hell. If you're needing to map from scratch best to do it in Windows with
 [USBToolBox](https://github.com/USBToolBox/tool).
 
-It must be noted I was unable to use the kext produced by USBToolbox but the mapping was indeed correct. So I copied over the mapping on to a previous kext made with the OG [USBMap](https://github.com/corpnewt/USBMap) which you can refer to in the provided EFI
+IMPORTANT - USBToolbox's Kext didnt work for me but the actual mapping was legit - so i just copied it over to my previous mapping made with the OG [USBMap](https://github.com/corpnewt/USBMap). If you're confused just refer to `USBModern.Kext` or brush up on your skills:
+
+### Links
+
+* [Dortania](https://dortania.github.io/Getting-Started-With-ACPI/Universal/rhub.html)
+* [OpenCore Visual Beginners Guide](https://chriswayg.gitbook.io/opencore-visual-beginners-guide/alternatives/usb-mapping-on-windows)
 
 ## AUTHOR NOTES
 
@@ -113,8 +118,8 @@ It must be noted I was unable to use the kext produced by USBToolbox but the map
 
 * Funky Icons
 * Been using SMBIOS iMac19,1 for a long time now. Works well. When i had my RX580 I was using iMacPro1,1 just for hardware DRM (Netflix etc).
-* EnableSafeModeSlide, ProvideCustomSlide, ProvideMaxSlide = FALSE (for this MB)
-* Security -> SecureBootModel = j185 or Default
+* `EnableSafeModeSlide`, `ProvideCustomSlide`, `ProvideMaxSlide` = FALSE (for this MB)
+* `Security` -> `SecureBootModel` = j185 or Default
 * 7700K is hot-ass chip. Delidding and Liquid Metal helped tremendously in lowering temps esp where its hot n humid (Kuala Lumpur). Managed a steady OC at 5.1Ghz when i used to run it as my main machine. Now actually undervolting as its mainly used for Plex
 
 *All attempts at hacking is solely your responsibility. Don't get mad at me if shit breaks LOL!
