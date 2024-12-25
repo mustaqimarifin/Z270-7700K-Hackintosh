@@ -26,7 +26,7 @@
 * Asus Strix Z270i
 * Intel i7-7700K
 * Intel HD 630
-* \~AMD Radeon RX 580~
+* \~~AMD Radeon RX 580~~
 * Asus GTX 750Ti (Disabled with SSDT)
 * Audio Realtek ALC1220
 * Ethernet Intel I219V7
@@ -37,8 +37,8 @@
 ## BIOS
 
 * CSM: Disabled (mandatory)
-* VT-d: Enabled
-* Platform Power Management: Disabled
+* VT-d: Enabled (Needed post-Big Sur + WSL2 in Windows)
+* Platform Power Management: Disabled ( stabilise your machine before enabling ASPM )
 * XHCI Hand-Off: Enabled
 * Network Stack: Disabled
 * Wake on LAN: Disabled
@@ -59,14 +59,12 @@
 * Ethernet
 * Sound ( Realtek and HDMI )
 * USB ports (USB port map for this board)
-* Wifi
+* Wifi + Bluetooth
 
 ## WHAT DOESNT?
 
 * Sleep: iGPU hacks are fundamentally broken. It will just shut down and be greeted by an annoying system report upon reboot.
   Functional sleep **requires** an AMD GPU. If you're ok with "Fake Ass Sleep" just extend your screensaver to "never".
-
-***
 
 ## ACPI
 
@@ -81,8 +79,6 @@ USB Power settings and Fake EC (Laptop) because z270i has multiple EC's
 ### SSDT-NOVIDIA.aml
 
 Disable GTX 750Ti for macOS
-
-***
 
 ## Kexts
 
@@ -104,27 +100,24 @@ Disable GTX 750Ti for macOS
 
 ## USBModern.Kext
 
-<p align="center">
-<img width="128" src="img/usbmap.webp">
-</p>
+![USBMap](img/usbmap.webp)
 
 While you can map from macOS, its annoying as hell. If you're needing to map from scratch best to do it in windows with
 [USBToolBox](https://github.com/USBToolBox/tool).
 
 It must be noted I was unable to use the kext produced by USBToolbox but the mapping was indeed correct. So I copied over the mapping on to a previous kext made with the OG [USBMap](https://github.com/corpnewt/USBMap) which you can refer to in the provided EFI
 
-***
-
 ## AUTHOR NOTES
 
-* Audio
+![Custom Icons](img/boot.webp)
+
+* Funky Icons
 * Been using SMBIOS iMac19,1 for a long time now. Works well. When i had my RX580 I was using iMacPro1,1 just for hardware DRM (Netflix etc).
 * EnableSafeModeSlide, ProvideCustomSlide, ProvideMaxSlide = FALSE (for this MB)
-* Security -> SecureBootModel = j185
-* 7700K is hot-ass chip. Delidding and Liquid Metal helped tremendously in lowering temps esp where its hot n humid (Kuala Lumpur). Managed a steady OC at 5.1Ghz
-  when i used to run it as my main machine. Now actually undervolting as its mainly used for Plex
+* Security -> SecureBootModel = j185 or Default
+* 7700K is hot-ass chip. Delidding and Liquid Metal helped tremendously in lowering temps esp where its hot n humid (Kuala Lumpur). Managed a steady OC at 5.1Ghz when i used to run it as my main machine. Now actually undervolting as its mainly used for Plex
 
-All attempts at hacking is solely your responsibility. Don't get mad at me if shit breaks LOL!
-I hope this can serve as one of the many references for folks out there.
+*All attempts at hacking is solely your responsibility. Don't get mad at me if shit breaks LOL!
+I hope this can serve as one of the many references for folks out there.*
 
-HAPPY HACKING
+**HAPPY HACKING**
