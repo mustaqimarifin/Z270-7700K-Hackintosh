@@ -24,11 +24,13 @@
 ## HARDWARE
 
 * Asus Strix Z270i
+* HDMI (v2.0) and DisplayPort (v1.4)
 * Intel i7-7700K
 * Intel HD 630
 * ~~AMD Radeon RX 580~~
+* ~~Zotac 1080Ti Mini~~
 * Asus GTX 750Ti (Disabled with SSDT)
-* Audio Realtek ALC1220
+* Realtek ALCS1220A
 * Ethernet Intel I219V7
 * Wi-Fi + BT Wireless 8265 ( Taken from a broken laptop. This board comes with Atheros in most markets I believe.)
 * Android Tethering using HoRNDIS
@@ -53,8 +55,7 @@
 
 ## WHAT WORKS?
 
-* RX580 worked well for years and died. Currently have my old 750Ti for Windows. Disabled in
-  macOS with an SSDT and working framebuffer settings for iGPU with 2 displays@144hz
+* RX580 worked well for years and died. My 1080Ti died just few months in. Such is my luck. Currently have my old 750Ti for Windows. Disabled in macOS with an SSDT and working framebuffer settings for iGPU with 2 displays@144hz
 * Shutdown and restart
 * Ethernet
 * Sound ( Realtek and HDMI )
@@ -84,28 +85,31 @@ Disable GTX 750Ti for macOS
 
 ### Source the Kexts yourselves. Refer to config. Only USBModern and HoRNDIS provided in Kext folder
 
-* Lilu 1.7.0
-* NVMEFix 1.1.2
-* Airportitlwm 2.3.0
-* HibernationFixup 1.5.2
-* BluetoolFixup 2.6.9
-* IntelBluetoothFirmware 2.4.0
-* IntelBTPatcher 2.4.0
-* IntelMausi 1.0.8
-* AppleALC 1.9.3
-* AirportItlwm 2.3.0 - Sonoma14.4 Version!!
-* WhateverGreen 1.3.7
-* VirtualSMC 1.3.4 inc SMCProcessor + SMCSuperIO
-* HoRNDIS 9.2 - Kext extracted from Official [HoRNDIS](https://github.com/jwise/HoRNDIS) Pkg
+* `Lilu` 1.7.0
+* `NVMEFix` 1.1.2
+* `HibernationFixup` 1.5.2
+* `BluetoolFixup` 2.6.9
+* `SkinnyBluetoothFirmware` 2.4.0 -> `IntelBluetoothFirmware` debloated specific to *Intel® Dual Band Wireless-AC 8265*. 11230KB -> 629KB
+* `IntelBTPatcher` 2.4.0
+* `IntelMausi` 1.0.8
+* `SkinnyALC` 1.8.9 -> `AppleALC` debloated specific to *Realtek ALCS1220A*. 4003KB -> 101KB
+* `SkinnyAirport` 2.3.0 -> `AirportItlwm` debloated specific to *Intel® Dual Band Wireless-AC 8265*. 16MB -> 8MB
+* `WhateverGreen` 1.3.7
+* `VirtualSMC` 1.3.4 inc `SMCProcessor` + `SMCSuperIO`
+* `HoRNDIS` 9.2 - Kext extracted [HoRNDIS](https://github.com/jwise/HoRNDIS). Android Tethering for macOS
+
+![Kext Diet](img/kexts.webp)
+**WARNING** - Do not use these kexts if ur wifi chip/audio codec is different.
 
 ## USBModern.Kext
 
 ![USBMap](img/usbmap.webp)
 
-While you can map from macOS, its annoying as hell. If you're needing to map from scratch best to do it in Windows with
-[USBToolBox](https://github.com/USBToolBox/tool).
+While you can map from macOS, its annoying as hell. If you're needing to map from scratch, its best to do it in Windows with [USBToolBox](https://github.com/USBToolBox/tool).
 
-IMPORTANT - USBToolbox's Kext didnt work for me but the actual mapping was legit - so i just copied it over to my previous mapping made with the OG [USBMap](https://github.com/corpnewt/USBMap). If you're confused just refer to `USBModern.Kext` or brush up on your skills:
+![USBMap2](img/mapping.webp)
+
+**IMPORTANT** - USBToolbox's Kext didnt work for me but the actual mapping was legit - so i just copied it over to my previous mapping made with the OG [USBMap](https://github.com/corpnewt/USBMap). If you're confused just refer to `USBModern.Kext` or brush up on your skills:
 
 ### Links
 
